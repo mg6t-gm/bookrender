@@ -4,7 +4,7 @@ from django.conf import settings
 
 User = get_user_model()
 
-class Comand(BaseCommand):
+class Command(BaseCommand):
     def handle(self, *args, **options):
         if not User.objects.filter(username='test-admin').exists():
             User.objects.create_superuser(
